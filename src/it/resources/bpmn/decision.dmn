@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_0oiulqj" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.1.1">
+  <decision id="Decision" name="Entity based Decision">
+    <decisionTable id="DecisionTable_1cgxa4u" hitPolicy="FIRST">
+      <input id="Input_1" label="Entity based input (businessKey)" biodi:width="285">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>businessKey</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Test case to run" name="testCase" typeRef="string" />
+      <output id="OutputClause_0pow1dj" label="Agent" name="agent" typeRef="string" />
+      <output id="OutputClause_1ftd9l5" label="Products booked" name="productsBooked" typeRef="integer" />
+      <rule id="DecisionRule_0mr0ikb">
+        <inputEntry id="UnaryTests_1mpklth">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_031701u">
+          <text>"ServiceTask"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o1anup">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01ovq3e">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cg1fy0">
+        <inputEntry id="UnaryTests_19bg5jk">
+          <text>"2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cyf430">
+          <text>"ReceiveTask"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f7vwbp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0og6lb7">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v8gray">
+        <inputEntry id="UnaryTests_1bhz6wg">
+          <text>"3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15yrq0s">
+          <text>"CallActivity"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zsr7lk">
+          <text>"MasterOfDDD"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qu20z4">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dpj2r5">
+        <inputEntry id="UnaryTests_0e3lq17">
+          <text>"4"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bp8frw">
+          <text>"MultiInstanceTask"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vfjg91">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14xtzzy">
+          <text>3</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

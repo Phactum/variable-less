@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1fl5ezb" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.1.1">
+  <bpmn:process id="Process_DMN" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" camunda:asyncBefore="true">
+      <bpmn:outgoing>Flow_0da8heq</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0da8heq" sourceRef="StartEvent_1" targetRef="Activity_01c0c4l" />
+    <bpmn:endEvent id="Event_0nakq0w">
+      <bpmn:incoming>Flow_0qvty8k</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0qvty8k" sourceRef="Activity_01c0c4l" targetRef="Event_0nakq0w" />
+    <bpmn:businessRuleTask id="Activity_01c0c4l" camunda:resultVariable="outcome" camunda:decisionRef="SimpleDecision" camunda:mapDecisionResult="singleEntry">
+      <bpmn:extensionElements>
+        <camunda:executionListener delegateExpression="${doBusinessRuleTaskDmn}" event="end" />
+        <camunda:inputOutput>
+          <camunda:inputParameter name="input">${testEntity.counter}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0da8heq</bpmn:incoming>
+      <bpmn:outgoing>Flow_0qvty8k</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_DMN">
+      <bpmndi:BPMNEdge id="Flow_0qvty8k_di" bpmnElement="Flow_0qvty8k">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="432" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0da8heq_di" bpmnElement="Flow_0da8heq">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0nakq0w_di" bpmnElement="Event_0nakq0w">
+        <dc:Bounds x="432" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0lf7ai7_di" bpmnElement="Activity_01c0c4l">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

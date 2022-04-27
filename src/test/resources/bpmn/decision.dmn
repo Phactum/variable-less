@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_1nxko8k" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.1.1">
+  <decision id="SimpleDecision" name="Simple DMN">
+    <decisionTable id="DecisionTable_173c79w" hitPolicy="FIRST">
+      <input id="Input_1" label="input">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>input</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="result" typeRef="string" biodi:width="192" />
+      <rule id="DecisionRule_0s4qde7">
+        <inputEntry id="UnaryTests_1pblsva">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wk89l5">
+          <text>"a"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ksucnd">
+        <inputEntry id="UnaryTests_0eadgsn">
+          <text>2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wyamzx">
+          <text>"b"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ylyj9o">
+        <inputEntry id="UnaryTests_0z74pkt">
+          <text>3</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0r31qk9">
+          <text>"c"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_098vtxu">
+        <inputEntry id="UnaryTests_0ludgpi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nldfco">
+          <text>"d"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="SimpleDecision">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

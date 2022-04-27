@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1fl5ezb" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.1.1">
+  <bpmn:process id="Process_MultiInstanceExecutionListener" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" camunda:asyncBefore="true">
+      <bpmn:outgoing>Flow_0grqlcs</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_0nakq0w">
+      <bpmn:incoming>Flow_1o5aeiq</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:subProcess id="Activity_1yt245t">
+      <bpmn:incoming>Flow_0grqlcs</bpmn:incoming>
+      <bpmn:outgoing>Flow_1o5aeiq</bpmn:outgoing>
+      <bpmn:multiInstanceLoopCharacteristics isSequential="true">
+        <bpmn:loopCardinality xsi:type="bpmn:tFormalExpression">4</bpmn:loopCardinality>
+      </bpmn:multiInstanceLoopCharacteristics>
+      <bpmn:startEvent id="Event_0hvgk2b">
+        <bpmn:outgoing>Flow_1h4vwpc</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:sequenceFlow id="Flow_1h4vwpc" sourceRef="Event_0hvgk2b" targetRef="Event_0zs3esy" />
+      <bpmn:endEvent id="Event_0c7740w">
+        <bpmn:incoming>Flow_0wetgjb</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:intermediateThrowEvent id="Event_0zs3esy">
+        <bpmn:extensionElements>
+          <camunda:executionListener delegateExpression="${doExecutionListenerMultiInstance}" event="start" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_1h4vwpc</bpmn:incoming>
+        <bpmn:outgoing>Flow_0wetgjb</bpmn:outgoing>
+      </bpmn:intermediateThrowEvent>
+      <bpmn:sequenceFlow id="Flow_0wetgjb" sourceRef="Event_0zs3esy" targetRef="Event_0c7740w" />
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_0grqlcs" sourceRef="StartEvent_1" targetRef="Activity_1yt245t" />
+    <bpmn:sequenceFlow id="Flow_1o5aeiq" sourceRef="Activity_1yt245t" targetRef="Event_0nakq0w" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_MultiInstanceExecutionListener">
+      <bpmndi:BPMNEdge id="Flow_1o5aeiq_di" bpmnElement="Flow_1o5aeiq">
+        <di:waypoint x="610" y="177" />
+        <di:waypoint x="662" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0grqlcs_di" bpmnElement="Flow_0grqlcs">
+        <di:waypoint x="215" y="177" />
+        <di:waypoint x="260" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0nakq0w_di" bpmnElement="Event_0nakq0w">
+        <dc:Bounds x="662" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1yt245t_di" bpmnElement="Activity_1yt245t" isExpanded="true">
+        <dc:Bounds x="260" y="77" width="350" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1h4vwpc_di" bpmnElement="Flow_1h4vwpc">
+        <di:waypoint x="336" y="177" />
+        <di:waypoint x="412" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wetgjb_di" bpmnElement="Flow_0wetgjb">
+        <di:waypoint x="448" y="177" />
+        <di:waypoint x="542" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0hvgk2b_di" bpmnElement="Event_0hvgk2b">
+        <dc:Bounds x="300" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0c7740w_di" bpmnElement="Event_0c7740w">
+        <dc:Bounds x="542" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0zs3esy_di" bpmnElement="Event_0zs3esy">
+        <dc:Bounds x="412" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

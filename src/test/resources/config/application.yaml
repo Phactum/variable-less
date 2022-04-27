@@ -1,0 +1,27 @@
+spring:
+   main:
+      allow-bean-definition-overriding: true
+   datasource:
+      url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      driverClassName: org.h2.Driver
+      jdbc-batch-processing: false
+camunda:
+   bpm:
+      filter:
+         create: "All tasks"
+      admin-user:
+         id: admin
+         password: admin
+         first-name: Admin
+         last-name: Istrator
+      generic-properties.properties:
+         initializeTelemetry: false
+         telemetry-reporter-activate: false
+      job-execution:
+         core-pool-size: 1
+         max-pool-size: 1
+         wait-time-in-millis: 100
+         max-wait: 100
+      database:
+         schema-update: true
+         jdbc-batch-processing: false
