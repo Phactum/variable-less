@@ -1,6 +1,6 @@
 # How to Say Goodbye to Process Variables
 
-This is a code-sample and give-away which shows a possible implementation for using certain aspects of Domain-Driven Design in the context of [Camunda](https://camunda.com/)-based business process applications. It was created for the talk *"How to Say Goodbye to Process Variables"* which is part of the [Camunda-Summit 2022](https://summit.camunda.com/expert-sessions/).
+This is a code-sample and give-away which shows a possible implementation for using certain aspects of Domain-Driven Design in the context of [Camunda](https://camunda.com/)-based business process applications. It was created for the talk *["How to Say Goodbye to Process Variables"](https://page.camunda.com/ccs2022-goodbyetoprocessvariables)* which is part of the [Camunda-Summit 2022](https://summit.camunda.com/expert-sessions/).
 
 Since a new major release of Camunda, [Camunda 8](https://docs.camunda.io/), is a change in the underlying paradigm we will release an adapter oriented update to this repository which works with [Camunda 7](https://docs.camunda.org) as well as Camunda 8, **without any changes in your business code**. Watch this repository to get an update once the Camunda 8 adapter is released.
 
